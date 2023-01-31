@@ -1,6 +1,6 @@
 provider "aws" {
    region   = var.region
-   profile = "terraform-user-new-acct"
+   #profile = "terraform-user-new-acct"
  }
 
 # Data sources to get VPC 
