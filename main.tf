@@ -1,8 +1,3 @@
-provider "aws" {
-   region   = var.region
-   #profile = "terraform-user-new-acct"
- }
-
 # Data sources to get VPC 
 #data "aws_vpc" "default" {
  # default = true
@@ -10,12 +5,12 @@ provider "aws" {
 
 #create sg
 module "security_group" {
-  source = "./security-group-ssh"
+  source = "./modules-sg-ec2/security-group-ssh"
 }
 
 #create ec2 instance
 module "ec2_instance" {
-  source                        = "./Ec2"
+  source                        = "./modules-sg-ec2/Ec2"
   instance_type                 = var.instance_type
   #key_name                      = var.key_name
 }
