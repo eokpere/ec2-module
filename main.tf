@@ -13,4 +13,7 @@ module "ec2_instance" {
   source                        = "./modules-sg-ec2/Ec2"
   instance_type                 = var.instance_type
   #key_name                      = var.key_name
+  tags = {
+        Name = var.ec2name
+    }
 }
