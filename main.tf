@@ -1,3 +1,10 @@
+locals {
+  tags = {
+    Owner       = "Eva"
+    Environment = "dev"
+  }
+}
+
 # Data sources to get VPC 
 #data "aws_vpc" "default" {
  # default = true
@@ -12,5 +19,7 @@ module "security_group" {
 module "ec2_instance" {
   source                        = "./modules-sg-ec2/Ec2"
   instance_type                 = var.instance_type
-  #key_name                      = var.key_name
+  key_name                      = var.key_name
+  tags = local.tags
 }
+
