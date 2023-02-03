@@ -1,4 +1,4 @@
-output "id" {
+output "resourse_id" {
   description = "The ID of the instance"
   value       = aws_instance.myec2.id
 }
