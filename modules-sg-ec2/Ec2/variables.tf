@@ -4,7 +4,7 @@ variable "instance_type" {
   type        = string
   default     = null
 }
-variable "ec2name" {
+variable "ec2Name" {
   description = "name of the instance"
   type        = string
   default     = null
